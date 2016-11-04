@@ -1,0 +1,369 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.min.css">
+        <link rel="stylesheet" href="black.css">
+
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h3><b>Data Viz</b></h3>
+                    <p>A Science-y look at Data Visualization<p>
+                </section>
+                
+                <section>
+                    <h3>Me</h3>
+                     <ul>
+                        <li>Alex, hi.</li><br>
+                        <li>Data Scientist @ Urban Institute
+                            <ul>
+                                <li>Big Data Statistics w/ Spark</li>
+                                <li>Natural Language Processing</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </li><br>
+                        <li>Professor of Data [Viz & Science] @ JHU & GU</li>
+                            <ul>
+                                <li>Data Viz in R</li>
+                                <li>Advanced Data Viz in D3</li>
+                                <li>Data Science</li>
+                            </ul>
+                    </ul> 
+                </section>
+                <section>
+                    <section>
+                        <img src="images/urban.png" width="800"> 
+                    </section>
+                    <section>
+                        <img src="images/urban2.png" width="800">
+                    </section>
+                    <section>
+                        <p><a href="http://webapp.urban.org/reducing-mass-incarceration/">Prison Population Forecaster</a></p>
+                        <img src="images/prison.png" width="1000">
+                    </section>
+                    <section>
+                        <p><a href="http://apps.urban.org/features/naep/">America's Gradebook</a></p>
+                        <img src="images/grades.png" width="1000">
+                    </section>
+                    <section>
+                        <p><a href="http://apps.urban.org/features/ncdb/immigrants-reshaping-residential-segregation/">Immigrants & Residential Segregation</a></p>
+                        <iframe src="http://apps.urban.org/features/ncdb/immigrants-reshaping-residential-segregation/" width="1000" height="600"></iframe>
+                    </section>
+                </section>
+                <section>
+                   <h3>Agenda</h3> 
+                     <ul>
+                        <li>Bad Graphs - <br> And What do we really know about data viz?</li><br>
+                        <li>Visualizing Models & Uncertainty</li><br>
+                        <li>A <u>Vocabulary</u> and a <u>Grammar</u> of Graphics (ggplot2)</li><br>
+                        <li>Alternatively, whatever you want.</li><br>
+                        <li>Questions?</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Bad Graphs</h1>
+                        <p>And What We Can Learn From Them</p>
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-1.png">
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-2.png">
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-3.png">
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-4.png">
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-5.png">
+                    </section>
+                    <section>
+                        <img src="images/bad-graphs-6.png">
+                    </section>
+
+                    <section>
+                        <p>All these graphs were misusing their visual encodings - the most common type of data visualization abuse.<p>
+                        <img src="images/vis-encoding.png" width="500">
+                    </section>
+                    <section>
+                        <p>And we have a sense of which visual encodings are best.<p>
+                        <img src="images/vis-order.png" width="500">
+                    </section>
+                    <section>
+                        <p><a href='http://complexdiagrams.com/properties'>Properties & Best Uses of Visual Encodings</a></p>
+                        <img src="images/viz-encoding2.png" width="900">
+                    </section>
+                    <section>
+                        <p>Check out Stephen Few's book "Now You See It" for more.</p>
+                        <img src="images/now-you.png">
+                        <p>Or his blog, Perceptual Edge</p>
+                    </section>
+                    <section>
+                        <img src="images/chart-junk-1.png">
+                    </section>
+                    <section>
+                        <img src="images/chart-junk-2.png">
+                    </section>
+                    <section>
+                        <img src="images/chart-junk-3.png">
+                    </section>
+                    <section>
+                        <img src="images/chart-junk-4.png">
+                    </section>
+
+                    <section>
+                        <blockquote>"The eye and the visual cortex form a massively parallel processor that provides the highest bandwidth channel into human cognitive centers"</blockquote>
+                        <p> - Colin Ware</p>
+                    </section>
+
+                    <section>
+                        <img src="images/illusion-1.png">
+                    </section>
+                    <section>
+                        <img src="images/illusion-2.png">
+                    </section>
+                    <section>
+                        <img src="images/illusion-3.png">
+                    </section>
+                    <section>
+                        <img src="images/illusion-4.png">
+                    </section>
+                    <section>
+                        <img src="images/wrong.png">
+                    </section>
+                    <section>
+                        <img src="images/wrong-2.png" width="700">
+                        <p>"Serial processing and the parallel-lines illusion: Length contrast through relative spatial separation of contours" - Kevin Jordan and Diane Schiano, 1986.</p>
+                    </section>
+                    <section>
+                        <img src="images/illusion-5.png" width="500">
+                    </section>
+                    
+                    <section>
+                        <a href="http://theness.com/neurologicablog/index.php/what-color-is-this-dress-its-an-optical-illusion/">It only gets worse...</a>
+                    </section>
+
+                    <section>
+                        <p>This is tough, since color can be awesome.</p>
+                        <img src="images/fives-1.png">
+                    </section>              
+
+                    <section>
+                        <img src="images/fives-2.png">
+                    </section>
+
+                    <section>
+                        <p>We consider color hue to be pre-attentive.</p>
+                        <img src="images/pre-attentive.png" width="700">
+                    </section>  
+
+                    <section>
+                        <p>But be careful with crowding effects...</p>
+                        <img src="images/color-loss.png" width="700">
+                        <p>More: "Toward a Perceptual Science of Multidimensional Data Visualization: Bertin and Beyond" by Marc Green</p>
+                    </section>  
+                    <section>
+                       <blockquote>"Position is Everything. Color is Hard."</blockquote>
+                        <p> - Moritz Stefaner</p><br>
+                    </section> 
+                    <section>
+                        <p>So, who knows.</p>
+                        <img src="images/duck-rabbit.jpg">
+                    </section>                        
+                </section>
+
+                <section>
+                    <section>
+                        <font size="20">Visualizing Models & Uncertainty</font>
+                    </section>   
+                    <section>
+                        <img src="images/anscombes-quartet.png" width="1100">   
+                    </section>  
+                    <section>
+                        <img src="images/table.jpg" width="1100">   
+                    </section>
+                    <section>
+                        <img src="images/anscombes-quartet2.png" width="1100">   
+                    </section>    
+                    <section>
+                        <img src="images/reg1.png">   
+                    </section> 
+                    <section>
+                        <img src="images/reg2.png">   
+                    </section> 
+                    <section>
+                        <img src="images/reg3.png">   
+                    </section> 
+                    <section>
+                        <img src="images/reg4.png">   
+                    </section> 
+                    <section>
+                        <img src="images/reg5.png">   
+                    </section> 
+                    <section>                    
+                        <img src="images/reg6.png">   
+                    </section> 
+                    <section>
+                        <p>Uncertainty in Data - Where does it come from?</p>
+                            <ul>
+                                <li>Measurement Error</li>
+                                <li>Statistical Error</li>
+                                <li>Predictive Error</li>
+                                <li><u>Cognitive & Perceptual Error</u></li>
+                            </ul>                        
+                    </section>
+                    <section>
+                        <img src="images/error-bars.png" width="1100">
+                    </section>  
+                    <section>
+                        <img src="images/error-bars2.png" width="1100">   
+                    </section>
+                    <section>
+                        <a href="http://www.nytimes.com/2014/05/02/upshot/how-not-to-be-misled-by-the-jobs-report.html">UpShot Jobs</a>       
+                    </section>
+
+                    <section>   
+                        <p>Showing Geographic Uncertainty</p>
+                        <a href="http://www.urban.org/urban-wire/explaining-uncertainty-poverty-rates" width="600" height="600">-Uncertainty in Poverty Rates</a><br>
+                         <a href="https://bl.ocks.org/cmgiven/09140e2ac8119340048f62d1b241977e" width="900" height="900">-Animating Uncertainty</a>
+                    </section>
+                    <section>
+                        <blockquote>"Design is about Empathy"</blockquote>
+                        <p> - Amanda Cox</p><br>
+                    </section>
+                    <section>
+                        <img src="images/bus.png">   
+                    </section>
+                    <section>   
+                        <img src="images/city.png" width="900">
+                    </section>
+                    <section>   
+                        <img src="images/dist.png" width="900">
+                        <a href="https://idl.cs.washington.edu/papers/spatial-analogies/">Personalized Spatial Analogies for Distances and Areas</a>
+                    </section>
+
+
+                </section> 
+
+                <section>
+                    <section>
+                        <font size="20">Color Scales are Hard</font>
+                    </section>
+
+                    <section>
+                        <p>Creating perceptually linear color scales is really hard.</p>
+                    </section>
+
+                    <section>
+                        <p>Visible Spectrum of Light</p>
+                        <img src="color/color1.jpg" width="800">
+                    </section>
+
+                    <section>
+                        <p>Wavelength</p>
+                        <img src="color/wavelength.png" width="800">
+                    </section>
+                    <section>
+                        <p>Wait - So How is there a Color Wheel?</p>
+                        <img src="color/color2.png" width="500">
+                    </section>
+
+                    <section>
+                        <p>Cones are specialized cells for detecting color.</p>
+                        <p>But not all colors are equally weighted.</p>
+                        <img src="color/cones.png" width="600">
+                    </section>
+
+                    <section>
+                        <p>It matters that there are more red and green cones than blue cones.</p>
+                        <img src="color/scales.png" width="1000">
+                    </section>
+
+                    <section>
+                        <p>It also matters that we percieve light on a logarithmic scale.</p>
+                        <img src="color/light-log.png" width="800">
+                    </section>
+
+                    <section>
+                        <p>Remember the three dimensions of color.</p>
+                        <img src="color/dimensions.png" width="800">
+                    </section>
+
+                    <section>
+                        <p>And the interplay between those dimensions.</p>
+                        <img src="color/dimensions-affect.png" width="800">
+                    </section>
+
+                    <section>
+                        <p>Plus computers don't play by our rules</p>
+                        <img src="color/rgba.png" width="500">
+                    </section>
+
+                    <section>
+                        <p>So, creating color scales is really hard.</p>
+                        <img src="color/linear-shift.png" width="900">
+                    </section>   
+
+                    <section>
+                        <p>Which is why we shouldn't do it.</p>
+                        <br>
+                        <a href="http://colorbrewer2.org/">Thank Jebus for Cynthia Brewer</a>
+                        <br><br>
+                        <a href="http://earthobservatory.nasa.gov/blogs/elegantfigures/2013/08/05/subtleties-of-color-part-1-of-6/">More info: Subtleties of Color</a>
+
+                    </section>  
+                </section> 
+                <section>
+                    <section>  
+                        <p>More Resources:</p>
+
+                        <ul>
+                            <li><a href="https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.89kvi0yue">39 Studies About Data Viz</a></li>
+                            <li><a href="http://idl.cs.washington.edu/">U. Washington Data Viz Lab<a/></li>
+                            <li><a href="http://www.visualisingdata.com/">Visualizing Data - Andy Kirk</a></li>
+                            <li><a href="http://flowingdata.com/">Flowing Data - Nathan Yau</a></li>
+                        </ul>
+                    </section>  
+                    <section> 
+                        <p>ggplot2 Resources</p>
+                            <ul>
+                                <li><a href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html">Harvard University ggplto2 Tutorial</a></li>
+                                <li><a href="http://opr.princeton.edu/workshops/Downloads/2015Jan_ggplot2Koffman.pdf">ggplot2 Concepts from Princeton's Office of Population Research</a></li>
+                                <li><a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf">ggplot2 Cheat Sheet</a></li>
+                                <li><a href="http://r4ds.had.co.nz/">R for Data Science</a></li>
+                            </ul>
+                    </section> 
+                    <section>  
+                        <p>Design Resources:</p>
+                        <ul>
+                            <li><a href="http://policyviz.com/style-guides/">PolicyViz - List of Data Visualization Style Guides</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=fThhbt23SGM">Mike BoStock - Design is a Search Problem</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=ha9LA3rYD9g">Amanda Cox - DataViz is About Empathy<a/></li>
+                        </ul>
+                    </section>  
+                    <section>
+                        <p><u>D</u>ata <u>D</u>riven <u>D</u>ocuments</p><br>
+                        <p>Created by:</p>
+                        <ul>
+                            <li><a href="https://bost.ocks.org/mike/example/">Mike Bostock</a></li>
+                            <li><a href="http://idl.cs.washington.edu/">Jeffrey Heer<a/></li>
+                            <li><a href="http://koalastothemax.com/">Vadim Ogievetsky</a></li>
+                        </ul>
+                        <br><br>
+                        <p>While at Stanford's CS department, they presented <a href="http://vis.stanford.edu/files/2011-D3-InfoVis.pdf">a paper introducing D3 </a>to the 2011 InfoVis Conference.</p>
+                        <br>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.min.js"></script>
+        <script>
+            Reveal.initialize();
+        </script>
+    </body>
+</html>
